@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: instagram-monitor-bot
+    runtime: python
+    runtimeVersion: 3.11.9
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: DISCORD_TOKEN
+        scope: all
